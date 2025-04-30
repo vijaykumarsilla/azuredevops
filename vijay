@@ -1,0 +1,23 @@
+You are managing a serverless architecture in Azure where billing records are stored in Azure Cosmos DB. The system is read-heavy, but records older than three months are rarely accessed. Over time, the database has grown significantly, leading to increased costs.
+
+Constraints:
+
+Record Size: Each billing record can be as large as 300 KB.
+
+Total Records: The database currently holds over 2 million records.
+
+Access Latency: When an old record is requested, it should still be served, with a response time in the order of seconds.
+
+Requirements:
+
+Simplicity & Ease of Implementation: The solution should be straightforward to deploy and maintain.
+
+No Data Loss & No Downtime: The transition should be seamless, without losing any records or requiring service downtime.
+
+No Changes to API Contracts: The existing read/write APIs for billing records must remain unchanged.
+
+Bonus Points:
+
+Include an architecture diagram illustrating your proposed solution.
+
+Provide pseudocode, commands, or scripts for implementing core logic (such as data archival, retrieval, and cost optimization strategies).
