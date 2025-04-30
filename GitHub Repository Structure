@@ -1,1 +1,9 @@
-
+azure-cost-optimization/
+├── README.md
+├── architecture-diagram.png
+├── archive_function/
+│   └── archive_old_records.py
+├── retrieval_function/
+│   └── get_record.py
+└── logs/
+    └── process_logs.txt
