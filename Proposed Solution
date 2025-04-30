@@ -1,1 +1,33 @@
+To optimize costs while adhering to the constraints, we can implement a data archiving strategy that moves older records to a more cost-effective storage solution, such as Azure Blob Storage, while keeping recent records in Azure Cosmos DB for quick access.
 
+1. Data Archiving Strategy
+Active Data: Keep records from the last three months in Azure Cosmos DB.
+
+Archived Data: Move records older than three months to Azure Blob Storage in a compressed format (e.g., JSON files compressed with GZIP).
+
+2. Data Movement Process
+Scheduled Function: Implement an Azure Function that runs daily to:
+
+Identify records older than three months.
+
+Move them to Azure Blob Storage.
+
+Delete them from Azure Cosmos DB after successful archival.
+
+3. Data Retrieval Process
+API Layer: Modify the data access layer to:
+
+Check Azure Cosmos DB for the requested record.
+
+If not found, retrieve it from Azure Blob Storage.
+
+Cache the retrieved record in Azure Cosmos DB for future access.
+
+4. Monitoring and Logging
+Implement logging and monitoring to track:
+
+Successful and failed archival operations.
+
+Retrieval times from both Azure Cosmos DB and Azure Blob Storage.
+
+Any errors or exceptions during the processes.
